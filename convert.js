@@ -6,9 +6,9 @@ const setup = JSON.parse(fs.readFileSync('./setup.json',{encoding:'utf8', flag:'
 
 let convert = async () => {
 
-    if(setup.restartServices){
+    if(setup.starterUrl){
       console.log("Stopping api service")
-      await fetch(`${setup.url}/api/disableService/axmanapi`)
+      await fetch(`${setup.starterUrl}/api/disableService/axmanapi`)
     }
 
     console.log("Deleting current database")
@@ -22,9 +22,9 @@ let convert = async () => {
     console.log("Converting data")
     await new System(setup).convert()
 
-    if(setup.restartServices){
+    if(setup.starterUrl){
       console.log("Starting service again")
-      await fetch(`${setup.url}/api/enableService/axmanapi`)
+      await fetch(`${setup.starterUrl}/api/enableService/axmanapi`)
     }
 }
 
