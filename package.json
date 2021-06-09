@@ -12,7 +12,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "entitystorage": "^1.0.48",
+    "entitystorage": "^1.0.53",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
