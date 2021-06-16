@@ -18,13 +18,6 @@ let convert = async () => {
   }
   */
 
-  if(myArgs.length <= 0){
-    console.log("Deleting current database")
-    try{require("fs").unlinkSync(`${setup.destination}/props.data`)}catch(err){}
-    try{require("fs").unlinkSync(`${setup.destination}/rels.data`)}catch(err){}
-    try{require("fs").unlinkSync(`${setup.destination}/tags.data`)}catch(err){}
-  }
-
   console.log("Initializing entity")
   await Entity.init(setup.destination)
   
